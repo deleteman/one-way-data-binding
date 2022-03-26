@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <script type="text/javascript" src="./simple-binder.js"></script>
+        <script type="text/javascript" src="./custom-components.js"></script>
+        <script type="text/javascript" src="./counter-component.js"></script>
+    </head>
+    <body >
+
+        <p>
+            <h1>One way data binding example</h1>
+        </p>
+        <p>
+<!--
+            Let's update this counter: <span id="counter"></span>
+        </p>
+        <p>
+            <button onclick="updateCounter(1)">Up!</button>
+            <button onclick="updateCounter(-1)">Down!</button>-->
+            <counter-component current-counter=0  data-text="Component-based Counter: $$"></counter-component>
+        </p>
+
+        <script type="text/javascript">
+            createdBindedVariable("counter")
+            counter = 0
+
+
+            function updateCounter(val) {
+                counter += val
+            }
+
+        </script>
+    </body>
+</html>
